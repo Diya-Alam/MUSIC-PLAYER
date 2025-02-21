@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STYLE.CSS">
+    <script src="SCRIPT.JS" defer></script>
+<!-- website icon -->
+    <link rel="website icon" type="svg" href="IMAGE/music-solid.svg"> 
+    <title>MUSIC PLAYER</title>
+<!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Fronts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<!-- front awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <div class="player">
+<!-- UI elements -->
+        <div class="wrapper">
+<!-- Track Information -->
+            <div class="details open-sans-heavy">
+                <div class="now-playing">
+                    PLAYING X OF Y
+                </div>
+                <div class="track-art"></div>
+               <div class="track-name">Track Name</div>
+               <div class="track-artist">Track Artist</div>
+            </div>
+<!-- Seek Slider -->
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                 <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                 <div class="total-duration">00:00</div>
+            </div>
+<!-- Volume control -->
+            <div class="slider_container">
+                <i class="fa fa-volume-down"></i>
+                 <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                 <i class="fa fa-volume-up"></i>
+            </div>
+<!-- Playback controls -->
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()">
+                    <i class="fas fa-random fa-2x" title="random"></i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="fa fa-step-backward fa-2x"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fa fa-play-circle fa-5x"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                </div>
+            </div>
+<!-- Wave Animation -->
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>  
+
+        </div>
+    </div>
+    
+</body>
+</html>
